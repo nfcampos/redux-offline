@@ -6,8 +6,7 @@ import {
   OFFLINE_STATUS_CHANGED,
   OFFLINE_SCHEDULE_RETRY,
   OFFLINE_COMPLETE_RETRY,
-  OFFLINE_BUSY,
-  PERSIST_REHYDRATE
+  OFFLINE_BUSY
 } from './constants';
 
 type ControlAction =
@@ -54,10 +53,6 @@ const offlineUpdater = function offlineUpdater(
     typeof action.payload.online === 'boolean'
   ) {
     return { ...state, online: action.payload.online };
-  }
-
-  if (action.type === PERSIST_REHYDRATE) {
-    return { ...state, busy: false };
   }
 
   if (action.type === OFFLINE_SCHEDULE_RETRY) {
