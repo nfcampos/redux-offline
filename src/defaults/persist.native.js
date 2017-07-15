@@ -7,7 +7,7 @@ import { createBlacklistFilter } from 'redux-persist-transform-filter';
 
 const offlineFilter = createBlacklistFilter(
   'offline',
-  [ 'busy', 'online' ]
+  [ 'busy', 'online', 'retryScheduled' ]
 );
 
 export default (store: any, options: { transforms?: [] }, callback: any) => {
